@@ -1,0 +1,31 @@
+@noUi-css-prefix: noUi;
+@import "nouislider.base.less";
+
+.noUi-horizontal .noUi-handle,
+.noUi-handle {
+  width:24px;
+  height:24px;
+  background-color: @white;
+  border-radius:50%;
+  border: 2px solid #9070EC;
+  box-shadow: none;
+  top:-10px;
+  &:before {
+    display: none;
+  }
+  &:after {
+    display: none;
+  }
+}
+.noUi-connect {
+  background: @primary;
+}
+.noUi-horizontal {
+  height:4.1px;
+}
+.noUi-target {
+  background: @grey-light;
+  border: none;
+  box-shadow: none;
+  border-radius:none;
+}
