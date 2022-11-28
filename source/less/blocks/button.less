@@ -1,0 +1,26 @@
+.button {
+  border: none;
+  border-radius: 4px;
+  background-color: @primary;
+  color: @white;
+  padding: 8px 20px;
+  &:hover {
+    background-color: @primary-light;
+    color: @white;
+  }
+  &:active {
+    background-color: @primary-dark;
+    color: @white;
+  }
+  &:disabled {
+    background-color: @grey;
+  }
+  &__alt {
+    background-color: @white;
+    color: @primary;
+    &:disabled {
+      color: @white;
+      background-color: @grey-light;
+    }
+  }
+}

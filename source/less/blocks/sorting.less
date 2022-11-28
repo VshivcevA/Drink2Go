@@ -1,0 +1,55 @@
+.sorting {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__type {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: @primary;
+    border-radius: 4px;
+    padding: 4px 10px;
+    &--text {
+      padding-right: 9px;
+    }
+    &--arrow-rotate180 {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      background-color: @primary025;
+    }
+  }
+  &__list {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    list-style: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding:0;
+    background-color: @white;
+  }
+  &__item {
+    padding:8px 20px;
+    cursor: pointer;
+    &--active {
+      color: @white;
+      background-color: @primary !important;
+    //  перебить hover
+    }
+    &:hover {
+      background-color: @primary025;
+    }
+  }
+}

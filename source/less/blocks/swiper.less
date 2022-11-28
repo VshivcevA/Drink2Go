@@ -1,0 +1,64 @@
+
+//тут много !important что бы не переписывать все стили
+
+.swiper-button-prev {
+  left: 0 !important;
+  &:hover {
+    background: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    rgba(255, 255, 255, 0) 100%);
+  }
+  &:active {
+    background: linear-gradient(
+      90deg,
+      rgba(120, 89, 207, 0.25) 0%,
+      rgba(120, 89, 207, 0) 100%);
+  }
+}
+.swiper-button-next {
+  right: 0 !important;
+  &:hover {
+    background: linear-gradient(
+    270deg,
+    #FFFFFF 0%,
+    rgba(255, 255, 255, 0) 100%);
+  }
+  &:active {
+    background: linear-gradient(
+    270deg,
+    rgba(120, 89, 207, 0.25) 0%,
+    rgba(120, 89, 207, 0) 100%);
+  }
+}
+.swiper-button-prev,
+.swiper-button-next{
+  color:@primary !important;
+  width:80px!important;
+  height:100% !important;
+  top: 20px !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after{
+  font-size:20px !important;
+}
+.swiper-pagination {
+  display:none;
+  @media (min-width:@desktop-width) {
+    display: block;
+  }
+}
+span.swiper-pagination-bullet {
+  width:62px;
+  height:4px;
+  border-radius:0;
+  opacity:1;
+  background-color:@white !important;
+  &-active {
+    background:@primary !important;
+  }
+  &:hover {
+    background-color: @bg-primary;
+  }
+}

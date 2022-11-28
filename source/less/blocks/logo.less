@@ -1,0 +1,49 @@
+.logo {
+  display: flex;
+  gap:20px;
+  align-items: center;
+  padding-left: 20px;
+  @media (min-width:@desktop-width) {
+    padding-left: 40px;
+  }
+  &__img {
+    display:block;
+    width:32px;
+    height:36px;
+    background-repeat: no-repeat;
+    background-image: url(../../img/logo-mobil.svg);
+    @media (min-width:@tablet-width) {
+      width:82px;
+      background-image: url(../../img/logo-tablet.svg);
+    }
+    @media (min-width:@desktop-width) {
+      width:170px;
+      background-image: url(../../img/logo-desktop.svg);
+    }
+    &__footer {
+      @media (min-width:@tablet-width) {
+        width:170px;
+        background-image: url(../../img/logo-desktop.svg);
+      }
+      @media (min-width:@desktop-width) {
+        flex-direction: row;
+      }
+    }
+  }
+  &__footer {
+    @media (min-width:@desktop-width) {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    display:none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: flex-start;
+    @media (min-width:@desktop-width) {
+      display:block;
+      text-align: left;
+    }
+  }
+}

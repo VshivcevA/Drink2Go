@@ -1,0 +1,97 @@
+.header {
+  color: @black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-bar {
+  display: flex;
+  padding-right: 20px;
+  @media (min-width:@desktop-width) {
+    padding-right: 40px;
+  }
+  & a {
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+    color:@black;
+  }
+  &__span {
+    display: none;
+    @media (min-width:@desktop-width) {
+      display: block;
+    }
+  }
+  &__link {
+    &:hover {
+      & span {
+        color: @primary;
+      }
+      & svg path {
+        fill: @primary;
+      }
+    }
+  }
+  &__user,
+  &__basket {
+    min-width:60px;
+    min-height:60px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    &:active {
+      background-color: @primary025;
+    }
+  }
+  &__burger {
+    position: relative;
+    height:1.5px;
+    width:16px;
+    background: black;
+    @media (min-width:@tablet-width) {
+      display: none;
+    }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height:1.5px;
+      width:16px;
+      background: @black;
+      transition: .4s;
+    }
+    &:before {
+      top: -5.15px;
+      transition: .4s;
+    }
+    &:after {
+      top: 5.15px;
+      transition: .4s;
+    }
+  }
+}
+.js-burger {
+  padding: 22px;
+  &:active {
+    background-color: @primary025;
+  }
+  @media (min-width:@tablet-width) {
+    padding:0;
+  }
+}
+.js-burger--active {
+  .header-bar__burger {
+    background-color: transparent;
+    &:before {
+      transform:rotate(45deg);
+      transition: .4s;
+      top: 0;
+    }
+    &:after {
+      transform:rotate(-45deg);
+      transition: .4s;
+      top: 0;
+    }
+  }
+}

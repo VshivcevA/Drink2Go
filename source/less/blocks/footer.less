@@ -1,0 +1,146 @@
+.footer {
+  margin-top: 30px;
+
+  @media (min-width:@desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 0 40px;
+  }
+  &-social {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F0EBFF;
+    @media (min-width:@tablet-width) {
+      border:none;
+    }
+    @media (min-width:@desktop-width) {
+      flex-direction: column;
+    }
+    &__list {
+      display:flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+    }
+    &__link {
+      display:block;
+      padding: 10px;
+      border-radius: 4px;
+      height: 22px;
+      &:hover {
+        background-color: @bg-primary;
+      }
+      &:active {
+        background-color: @primary025;
+      }
+      &:hover svg path {
+        fill: @primary;
+      }
+    }
+  }
+  &__nav {
+    border-bottom: 1px solid #F0EBFF;
+    @media (min-width:@tablet-width) {
+      border:none;
+    }
+    @media (min-width:@tablet-width) {
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    & ul:nth-child(n) {
+      border-bottom: 1px solid #F0EBFF;
+      @media (min-width:@tablet-width) {
+        border:none;
+      }
+    }
+  }
+  &__title {
+    margin-top:0;
+    color: @primary;
+  }
+  &__list{
+    list-style: none;
+    padding:20px 0 0;
+    margin:0;
+    text-align:left;
+  }
+  &__item {
+    position: relative;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    & a {
+      text-decoration: none;
+      color: @black;
+      &:hover {
+        color: @primary;
+      }
+      &:active {
+        color: @primary-dark;
+      }
+    }
+
+    &--address{
+      padding-left: 20px;
+      &:before {
+        position: absolute;
+        content: "";
+        width:13px;
+        height: 16px;
+        background: url(../../img/icon/icon-address.svg) no-repeat;
+        left:3px;
+        top: 2px;
+      }
+    }
+    &--tel{
+      padding-left: 20px;
+      text-decoration: none;
+      color: @black;
+      &:before {
+        position: absolute;
+        content: "";
+        width:13px;
+        height: 16px;
+        background: url(../../img/icon/icon-tel.svg) no-repeat;
+        left:3px;
+      }
+    }
+  }
+  &__copyright {
+    margin-bottom: 30px;
+    text-align:center;
+    & a {
+      position: relative;
+      color: @grey;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-decoration: none;
+    }
+    & svg {
+      position: absolute;
+      top: 0;
+    }
+    &:hover {
+      & a {
+        color: @primary;
+      }
+      & svg path {
+        fill: @primary;
+      }
+    }
+    &:active {
+      & a {
+        color: @primary-dark;
+      }
+      & svg path {
+        fill: @primary-dark;
+      }
+    }
+  }
+}
