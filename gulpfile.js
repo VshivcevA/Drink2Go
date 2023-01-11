@@ -18,7 +18,7 @@ let isDevelopment = true;
 
 export function processMarkup () {
   return gulp.src('source/*.html')
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('public'));
 }
 
 export function lintBem () {
@@ -41,38 +41,38 @@ export function processStyles () {
       autoprefixer(),
       csso()
     ]))
-    .pipe(gulp.dest('build/css', { sourcemaps: isDevelopment }))
+    .pipe(gulp.dest('public/css', { sourcemaps: isDevelopment }))
     .pipe(browser.stream());
 }
 
 export function processScripts () {
   return gulp.src('source/js/**/*.js')
     .pipe(terser())
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('public/js'))
     .pipe(browser.stream());
 }
 
 export function optimizeImages () {
   return gulp.src('source/img/**/*.{png,jpg}')
-    .pipe(gulp.dest('build/img'))
+    .pipe(gulp.dest('public/img'))
 }
 
 export function createWebp () {
   return gulp.src('source/img/**/*.{png,jpg}')
-    .pipe(gulp.dest('build/img'))
+    .pipe(gulp.dest('public/img'))
 }
 
 export function optimizeVector () {
   return gulp.src(['source/img/**/*.svg', '!source/img/icons/**/*.svg'])
     .pipe(svgo())
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('public/img'));
 }
 
 export function createStack () {
   return gulp.src('source/img/icons/**/*.svg')
     .pipe(svgo())
     .pipe(stacksvg())
-    .pipe(gulp.dest('build/img/icons'));
+    .pipe(gulp.dest('public/img/icons'));
 }
 
 export function copyAssets () {
@@ -83,13 +83,13 @@ export function copyAssets () {
   ], {
     base: 'source'
   })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('public'));
 }
 
 export function startServer (done) {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'public'
     },
     cors: true,
     notify: false,
@@ -123,7 +123,7 @@ function compileProject (done) {
 }
 
 function deleteBuild () {
-  return deleteAsync('build');
+  return deleteAsync('public');
 }
 
 export function buildProd (done) {
